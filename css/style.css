@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    background-color: #141414;
     width: 100%;
     height: auto;
     margin: 0;
@@ -26,6 +26,7 @@ body {
     width: 100%;
     height: 5em;
     padding-left: 2em;
+    top: 0;
     position: fixed;
     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 }
@@ -61,16 +62,6 @@ body {
 }
 
 /* banner */
-.banner {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background-image: url(../img/Banner.webp);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .banner .title {
     width: 30em;
 }
@@ -86,6 +77,15 @@ body {
 
 .banner img {
     width: 100%;
+}
+
+.banner .bannerimg {
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    background-position: 50%;
+    opacity: 1;
+    height: 100vh;
 }
 
 .filmdesc {
@@ -159,6 +159,20 @@ body {
     transition: opacity .5s;
 }
 
+.hero-vignette {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 8%, 0) 0, hsla(0, 0%, 8%, .15) 15%, hsla(0, 0%, 8%, .35) 29%, hsla(0, 0%, 8%, .58) 44%, #141414 68%, #141414);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    bottom: -1px;
+    height: 14.7vw;
+    opacity: 1;
+    top: auto;
+    width: 100%;
+    position: absolute;
+}
+
 .age {
     position: absolute;
     width: 4em;
@@ -221,26 +235,60 @@ ul.navicons {
 
 /* divider */
 .divider {
-    height: 100vh;
+    height: 35em;
 }
 
 /* slider */
 .slider {
     height: 100vh;
-    background-color: red;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.slider h2 {
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .slider .sliderContainer {
     display: flex;
-    width: 100%;
+    width: 95%;
     height: auto;
+    justify-content: center;
+}
+
+.slider .sectionTitle {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 92%;
+    margin-bottom: 1em;
 }
 
 
 .slider .card {
-    width: 10em;
+    width: 20em;
     background-color: #fff;
-    height: 5em;
+    height: 8.5em;
+    margin: 0 0.1em;
+    border-radius: 0.2em;
+}
+
+.slider .pagination {
+    display: flex;
+    align-items: center;
+
+}
+
+.slider .pagination li {
+    background-color: rgba(201, 201, 201, 0.6);
+    margin: 0 0.1em;
+    height: 0.1em;
+    width: 1em;
+    text-decoration: none;
+    list-style: none;
 }
