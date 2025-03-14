@@ -1,3 +1,4 @@
+/* imports & reset */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -16,15 +17,17 @@ body {
     padding: 0;
 }
 
+/* header */
 .header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 5em;
-    margin-left: 3em;
+    padding-left: 2em;
     position: fixed;
-
+    background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 }
 
 .header .nav {
@@ -34,7 +37,7 @@ body {
 }
 
 .header .nav img {
-    width: 7em;
+    width: 6em;
     height: auto;
 }
 
@@ -53,12 +56,56 @@ body {
     margin: 1em;
 }
 
+.header a:hover {
+    opacity: 80%;
+}
+
+/* banner */
 .banner {
     position: absolute;
     height: 100vh;
     width: 100vw;
     background-image: url(../img/Banner.webp);
-    background-position: center center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* icon */
+.navicons {
+    padding-right: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.navicons span {
+    padding: 0 0.5em;
+}
+
+.navicons .notify {
+    color: #fff;
+    font-size: 20px;
+}
+
+.navicons .profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile span {
+    padding: 0.2em !important;
+}
+
+.navicons .profile .caret {
+    color: #fff;
+    font-size: 15px;
+}
+
+.navicons img {
+    border-radius: 5px;
+}
+
+.navicons .search {
+    color: #fff;
+    font-size: 20px;
 }
