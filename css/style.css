@@ -37,7 +37,7 @@ body {
 }
 
 .header .nav img {
-    width: 6em;
+    width: 6.5em;
     height: auto;
 }
 
@@ -108,11 +108,44 @@ body {
     align-items: center;
     color: #000;
     background-color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 0.5em 1em;
+    margin-right: 0.7em;
     cursor: pointer;
     border: none;
     border-radius: 0.2em;
+}
+
+.banner .buttons .playbutton .play {
+    font-size: 1.2em;
+}
+
+.banner .buttons .playbutton .info {
+    font-size: 1.2em;
+}
+
+.banner .buttons .infobutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    opacity: 1;
+    color: #fff;
+    background-color: rgba(109, 109, 110, 0.7);
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0em 1em;
+    border: none;
+    border-radius: 0.2em;
+}
+
+.banner .buttons span {
+    font-weight: bold;
+    padding: 0.1em 0.3em;
+}
+
+.banner .buttons .text {
+    width: 5em;
 }
 
 .vignette {
@@ -126,22 +159,24 @@ body {
     transition: opacity .5s;
 }
 
-.banner .buttons .infobutton {
+.age {
+    position: absolute;
+    width: 4em;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    opacity: 1;
-    color: #fff;
-    background-color: rgba(109, 109, 110, 0.7);
-    cursor: pointer;
-    font-size: 1.2em;
-    padding: 0.2em 1em;
-    border: none;
-    border-radius: 0.2em;
+    height: auto;
+    right: 0%;
+    top: 65%;
+    z-index: 100;
+    padding: 0.2em;
+    border-left: 0.2em solid #fff;
+    background-color: rgba(51,51,51,.6);
 }
 
-.banner .buttons span {
-    padding: 0.1em;
+.age span {
+    color: #fff;
+    font-size: 1em;
 }
 
 /* icon */
@@ -182,4 +217,9 @@ ul.navicons {
 .navicons .search {
     color: #fff;
     font-size: 1em;
+}
+
+/* divider */
+.divider {
+    height: 100vh;
 }
