@@ -71,6 +71,23 @@ body {
     background-size: cover;
 }
 
+.banner .title {
+    width: 20em;
+}
+
+.banner .titleDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    left: 4%;
+    bottom: 35%;
+    position: absolute;
+}
+
+.banner img {
+    width: 100%;
+}
+
 /* icon */
 .navicons {
     padding-right: 2em;
