@@ -23,6 +23,8 @@ body {
     width: 100%;
     height: 5em;
     margin-left: 3em;
+    position: fixed;
+
 }
 
 .header .nav {
@@ -49,4 +51,14 @@ body {
     color: #fff;
     text-decoration: none;
     margin: 1em;
+}
+
+.banner {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/Banner.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
