@@ -223,3 +223,24 @@ ul.navicons {
 .divider {
     height: 100vh;
 }
+
+/* slider */
+.slider {
+    height: 100vh;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider .sliderContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+
+.slider .card {
+    width: 10em;
+    background-color: #fff;
+    height: 5em;
+}
