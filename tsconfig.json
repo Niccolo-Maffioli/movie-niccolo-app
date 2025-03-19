@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ES5",
+      "lib": ["ES2015", "dom"],      // Aggiungi questa riga per includere la libreria ES2015
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "outDir": "./dist"
+    },
+    "include": ["./js/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
+  
