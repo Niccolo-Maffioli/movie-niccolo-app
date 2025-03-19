@@ -15,9 +15,6 @@
     <!-- style.css -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <!-- script.js -->
-    <script src="../js/script.js"></script>
-
 </head>
 <body>
     <div class="age">
@@ -44,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="header">
+    <div id="header" class="header">
         <div class="nav">
             <a href="index.html"><img src="../img/Logonetflix.png" alt="logo"></a>
             <ul>
@@ -52,20 +49,20 @@
                 <li><a href="serietv.html">Serie TV</a></li>
                 <li><a href="film.html">Film</a></li>
                 <li><a href="consigli.html">Nuovi e popolari</a></li>
-                <li><a href="lista.html">La mia lista</a></li>
-                <li><a href="sfoglia.html">Sfoglia per lingua</a></li>
+                <!-- <li><a href="lista.html">La mia lista</a></li>
+                <li><a href="sfoglia.html">Sfoglia per lingua</a></li> -->
             </ul>
         </div>
         <ul class="navicons">
             <span class="search fa-solid fa-magnifying-glass"></span>
             <span><a href="bambini.html">Bambini</a></span>
             <span class="notify fa-regular fa-bell"></span>
-            <div class="profile">
+            <!-- <div class="profile">
                 <span class="profile">
                     <img class="profile-icon" src="https://occ-0-4582-778.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABVC11njRAccYpkkyuBsUHtOOKYFGkwSR5W17rS9AcsA928D5_xgxoWHbUZESUThei8tFV3So6eTfjsvn0RRqN3kuxbq7KCI.png?r=59d" alt="">
                 </span>
                 <span class="caret fa-solid fa-caret-down" role="presentation"></span>
-            </div>
+            </div> -->
         </ul>
     </div>
     <div class="divider"></div>
@@ -80,7 +77,7 @@
                 <li></li>
             </ul>
         </div>
-        <div class="sliderContainer">
+        <div class="sliderContainer" data-type="movie">
             <div class="arrows">
                 <div class="arrow-left active">
                     <span class="fa-solid fa-chevron-left"></span>
@@ -93,7 +90,7 @@
     </div>
     <div class="slider">
         <div class="sectionTitle">
-            <h2>Solo su Netflix</h2>
+            <h2>Serie TV</h2>
             <ul class="pagination">
                 <li></li>
                 <li></li>
@@ -102,7 +99,7 @@
                 <li></li>
             </ul>
         </div>
-        <div class="sliderContainer">
+        <div class="sliderContainer" data-type="popular">
             <div class="arrows">
                 <div class="arrow-left active">
                     <span class="fa-solid fa-chevron-left"></span>
@@ -113,5 +110,53 @@
             </div>
         </div>
     </div>
+    <div class="slider">
+        <div class="sectionTitle">
+            <h2>Film</h2>
+            <ul class="pagination">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="sliderContainer" data-type="anime">
+            <div class="arrows">
+                <div class="arrow-left active">
+                    <span class="fa-solid fa-chevron-left"></span>
+                </div>
+                <div class="arrow-right active">
+                    <span class="fa-solid fa-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="sectionTitle">
+            <h2>Nuovi e popolari</h2>
+            <ul class="pagination">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="sliderContainer" data-type="documentary">
+            <div class="arrows">
+                <div class="arrow-left active">
+                    <span class="fa-solid fa-chevron-left"></span>
+                </div>
+                <div class="arrow-right active">
+                    <span class="fa-solid fa-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script.js -->
+    <script type="module" src="../dist/script.js"></script>
+
 </body>
 </html>
