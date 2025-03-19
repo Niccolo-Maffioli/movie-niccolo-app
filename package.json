@@ -1,0 +1,28 @@
+{
+  "name": "movie-niccolo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niccolo-Maffioli/movie-niccolo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niccolo-Maffioli/movie-niccolo-app/issues"
+  },
+  "homepage": "https://github.com/Niccolo-Maffioli/movie-niccolo-app#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^4.0.14"
+  }
+}
