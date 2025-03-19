@@ -12,5 +12,4 @@ const nav = (): void => {
     });
 };
 
-// Esporta la funzione
 export default nav;

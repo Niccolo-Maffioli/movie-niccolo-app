@@ -1,9 +1,14 @@
 import nav from './navbar.js';
 import fetchMoviesAndTV from './fetchMovies.js';
 
-fetchMoviesAndTV();
+/* fetchMoviesAndTV(); */
 nav();
 
+const alertButton = document.querySelector<HTMLElement>('#alertButton');
+
+alertButton?.addEventListener('click', () => {
+    alert('Play');
+});
 
 //scroll slider
 /* document.addEventListener("DOMContentLoaded", () => {

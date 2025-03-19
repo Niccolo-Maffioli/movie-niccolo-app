@@ -12,5 +12,4 @@ var nav = function () {
         }
     });
 };
-// Esporta la funzione
 export default nav;
