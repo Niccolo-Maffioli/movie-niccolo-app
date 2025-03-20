@@ -1,8 +1,10 @@
 import nav from './navbar.js';
-import fetchMoviesAndTV from './fetchMovies.js';
-
+/* import fetchMoviesAndTV from './fetchMovies.js';
+ */
 /* fetchMoviesAndTV(); */
+import stampaMovies from './fetchMovies.js';
 nav();
+stampaMovies();
 
 const alertButton = document.querySelector<HTMLElement>('#alertButton');
 

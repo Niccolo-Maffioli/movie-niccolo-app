@@ -1,6 +1,10 @@
 import nav from './navbar.js';
+/* import fetchMoviesAndTV from './fetchMovies.js';
+ */
 /* fetchMoviesAndTV(); */
+import stampaMovies from './fetchMovies.js';
 nav();
+stampaMovies();
 var alertButton = document.querySelector('#alertButton');
 alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventListener('click', function () {
     alert('Play');
