@@ -80,23 +80,31 @@ const movie = () => {
         
       ];
 
-
     const movieContainer = document.getElementById("sliderContainer");
 
-    /* console.log(movieContainer);
-    console.log(movies); */
+    movies.map((movie) => {
+        const card = document.createElement("div");
+        const title = document.createElement("h1");
+        const year = document.createElement("p");
 
-    const card = document.createElement("div");
-    const title = document.createElement("h1");
-    const year = document.createElement("p");
+        movieContainer.appendChild(card);
+        card.classList.add("card");
 
-    movieContainer.appendChild(card);
-    card.classList.add("card");
+        card.appendChild(title);
+        title.style = "color: #fff"
+        title.innerText = movie.title;
 
-    card.appendChild(title);
-    title.innerText = movies.title;
-    card.appendChild(year);
-    year.innerText = movies.year;
+        card.appendChild(year);
+        year.style = "color: #fff"
+        year.innerText = movie.year;
+    });
+
+    
+
+    /* console.log(movieContainer); */
+    
+
+    
 
 };
 
