@@ -4,8 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,6 @@
   },
   "homepage": "https://github.com/Niccolo-Maffioli/movie-niccolo-app#readme",
   "description": "",
-  "devDependencies": {
-    "typescript": "^5.8.2"
-  },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.14",
     "tailwind": "^4.0.0",

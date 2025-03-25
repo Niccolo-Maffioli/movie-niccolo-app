@@ -30,11 +30,11 @@
                 <p class="filmdesc">Un misterioso robot porta una ragazza rimasta orfana alla ricerca del fratello in quest'avventura ricca di azione dai registi di "Avengers: Endgame."</p>
             </div>
             <div class="buttons">
-                <button id="alertButton" class="playbutton">
+                <button id="showAlert" class="playbutton">
                     <span class="fa-solid fa-play play"></span>
                     <span class="text">Riproduci</span>
                 </button>
-                <button class="infobutton">
+                <button onclick="showAlert()" id="infoButton" class="infobutton">
                     <span class="fa-solid fa-circle-info info"></span>
                     <span class="text">Altre info</span>
                 </button>
@@ -77,7 +77,7 @@
                 <li></li>
             </ul>
         </div>
-        <div class="sliderContainer" data-type="movie">
+        <div class="sliderContainer" id="sliderContainer" data-type="movie">
             <div class="arrows">
                 <div class="arrow-left active">
                     <span class="fa-solid fa-chevron-left"></span>
@@ -86,13 +86,14 @@
                     <span class="fa-solid fa-chevron-right"></span>
                 </div>
             </div>
+            <!-- <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
             <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
             <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
             <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
             <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
             <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-            <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-            <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
+            
+            <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div> -->
 
         </div>
     </div>
@@ -164,7 +165,7 @@
     </div>
 
     <!-- script.js -->
-    <script type="module" src="../dist/script.js"></script>
+    <script type="module" src="../js/script.js"></script>
 
 </body>
 </html>

@@ -1,16 +1,34 @@
-import nav from './navbar.js';
+//import nav from './navbar.js';
 /* import fetchMoviesAndTV from './fetchMovies.js';
  */
 /* fetchMoviesAndTV(); */
-import stampaMovies from './fetchMovies.js';
-nav();
-stampaMovies();
+//import stampaMovies from './fetchMovies.js';
 
-const alertButton = document.querySelector<HTMLElement>('#alertButton');
+import movie from "./array.js";
 
-alertButton?.addEventListener('click', () => {
+movie();
+
+/* 
+map
+filter
+reduce
+sort
+forEach
+some
+every
+find
+*/
+
+
+/* nav();
+
+stam    paMovies();
+
+const  alertButton = document.querySelector('#alertButton');
+
+alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventListener('click', function () {
     alert('Play');
-});
+}); */
 
 //scroll slider
 /* document.addEventListener("DOMContentLoaded", () => {
@@ -31,4 +49,8 @@ alertButton?.addEventListener('click', () => {
             slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
         });
     });
-}); */
+}); */ 
+
+
+//document.getElementById("infoButton").addEventListener('click', showAlert);
+
