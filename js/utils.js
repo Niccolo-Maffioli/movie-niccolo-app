@@ -1,5 +1,5 @@
-import { spesa } from "./food";
+import { spesa } from "./food.js";
 
-const leggiListaIndice = () => {
-    
-}
+spesa.map((item) => {
+    console.log(item);
+})
