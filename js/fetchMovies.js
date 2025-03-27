@@ -56,8 +56,7 @@ const getMovie = async () => {
         });
 
         const data = await result.json();
-        console.log(data);
+        return data;
 };
 
-
-getMovie();
+export default getMovie

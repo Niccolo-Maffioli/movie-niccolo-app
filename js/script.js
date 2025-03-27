@@ -1,4 +1,4 @@
-//import nav from './navbar.js';
+import nav from './navbar.js';
 /* import fetchMoviesAndTV from './fetchMovies.js';
  */
 /* fetchMoviesAndTV(); */
@@ -20,11 +20,11 @@ find
 */
 
 
-/* nav();
+nav();
 
-stam    paMovies();
+/*stampaMovies();
 
-const  alertButton = document.querySelector('#alertButton');
+const alertButton = document.querySelector('#alertButton');
 
 alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventListener('click', function () {
     alert('Play');
