@@ -31,12 +31,12 @@ alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventLi
 }); */
 
 //scroll slider
-/* document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const sliders = document.querySelectorAll('.sliderContainer');
 
     sliders.forEach(slider => {
-        const leftArrow = slider.closest('.slider').querySelector('.arrow-left');
-        const rightArrow = slider.closest('.slider').querySelector('.arrow-right');
+        const leftArrow = document.querySelector('.arrow-left');
+        const rightArrow = document.querySelector('.arrow-right');
 
         let scrollAmount = 0;
         const scrollStep = slider.clientWidth * 1.0; // Scorre circa 80% della larghezza
@@ -49,7 +49,7 @@ alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventLi
             slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
         });
     });
-}); */ 
+}); 
 
 
 //document.getElementById("infoButton").addEventListener('click', showAlert);

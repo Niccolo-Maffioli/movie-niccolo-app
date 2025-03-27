@@ -59,4 +59,4 @@ const getMovie = async () => {
         return data;
 };
 
-export default getMovie
+export default getMovie;

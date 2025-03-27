@@ -34,6 +34,7 @@ body::-webkit-scrollbar {
     top: 0;
     position: fixed;
     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+    z-index: 100;
 }
 
 .headerscroll {
@@ -276,8 +277,7 @@ ul.navicons {
     width: 100%;
     height: 100%;
     justify-content: flex-start;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .sliderContainer::-webkit-scrollbar {
@@ -299,6 +299,8 @@ ul.navicons {
     height: 100%;
     margin: 0 0.3em;
     border-radius: 0.3em;
+    cursor: pointer;
+    position: relative;
 }
 
 .movie-img {
@@ -334,6 +336,37 @@ ul.navicons {
     padding: 1em;
     margin: 0 1em;
     cursor: pointer;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    opacity: 50%;
+}
+
+.details {
+    display: none;
+    position: absolute;
+    color: #fff;
+    background-color: #0000008f;
+    border-radius: 0.3em;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+}
+
+.card:hover .details {
+    display: block;
+}
+
+.details h1 {
+    font-size: 1em;
+}
+
+.details .film_year {
+    font-size: 0.6em;
+}
+
+.details .film_description {
+    font-size: 0.8em;
 }
 
 .slider li:first-child {
