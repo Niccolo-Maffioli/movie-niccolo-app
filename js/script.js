@@ -19,7 +19,6 @@ every
 find
 */
 
-
 nav();
 
 /*stampaMovies();
@@ -35,21 +34,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const sliders = document.querySelectorAll('.sliderContainer');
 
     sliders.forEach(slider => {
-        const leftArrow = document.querySelector('.arrow-left');
-        const rightArrow = document.querySelector('.arrow-right');
+        const paginations = slider.parentElement.querySelectorAll('.pagination'); // Prende le paginazioni relative al singolo slider
+        const leftArrow = slider.parentElement.querySelector('.arrow-left');
+        const rightArrow = slider.parentElement.querySelector('.arrow-right');
 
         let scrollAmount = 0;
-        const scrollStep = slider.clientWidth * 1.0; // Scorre circa 80% della larghezza
+        const scrollStep = slider.clientWidth * 1.0; // Scorre tutta la larghezza del container
 
         rightArrow.addEventListener("click", () => {
             slider.scrollBy({ left: scrollStep, behavior: "smooth" });
+
+            const activePagination = document.querySelector('.active-pagination');
+
+            let nextPagination = activePagination.nextElementSibling;
+
+            activePagination.classList.remove("active-pagination");
+            nextPagination.classList.add("active-pagination");
         });
 
         leftArrow.addEventListener("click", () => {
             slider.scrollBy({ left: -scrollStep, behavior: "smooth" });
+
+            const activePagination = document.querySelector('.active-pagination');
+
+            let prevPagination = activePagination.previousElementSibling;
+
+            activePagination.classList.remove("active-pagination");
+            prevPagination.classList.add("active-pagination");
         });
     });
-}); 
+});
 
 
 //document.getElementById("infoButton").addEventListener('click', showAlert);

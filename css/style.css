@@ -369,7 +369,7 @@ ul.navicons {
     font-size: 0.8em;
 }
 
-.slider li:first-child {
+.slider .pagination .active-pagination {
     background-color: #fff;
     opacity: 100%;
 }
