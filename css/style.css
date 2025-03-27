@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
     margin: 1em;
 }
 
-.header a:hover {
+.header ul a:hover {
     opacity: 80%;
 }
 
