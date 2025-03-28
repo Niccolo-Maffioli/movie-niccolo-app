@@ -29,7 +29,7 @@
                 <img src="../img/Film.webp" alt="film">
                 <p class="filmdesc">Un misterioso robot porta una ragazza rimasta orfana alla ricerca del fratello in quest'avventura ricca di azione dai registi di "Avengers: Endgame."</p>
             </div>
-            <div class="buttons">
+            <!-- <div class="buttons">
                 <button id="showAlert" class="playbutton">
                     <span class="fa-solid fa-play play"></span>
                     <span class="text">Riproduci</span>
@@ -38,7 +38,7 @@
                     <span class="fa-solid fa-circle-info info"></span>
                     <span class="text">Altre info</span>
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
     <div id="header" class="header">
@@ -48,15 +48,15 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="serietv.html">Serie TV</a></li>
                 <li><a href="film.html">Film</a></li>
-                <li><a href="consigli.html">Nuovi e popolari</a></li>
+                <!-- <li><a href="consigli.html">Nuovi e popolari</a></li> -->
                 <!-- <li><a href="lista.html">La mia lista</a></li>
                 <li><a href="sfoglia.html">Sfoglia per lingua</a></li> -->
             </ul>
         </div>
         <ul class="navicons">
-            <span class="search fa-solid fa-magnifying-glass"></span>
-            <span><a href="bambini.html">Bambini</a></span>
-            <span class="notify fa-regular fa-bell"></span>
+            <!-- <span class="search fa-solid fa-magnifying-glass"></span> -->
+            <!-- <span><a href="bambini.html">Bambini</a></span> -->
+            <!-- <span class="notify fa-regular fa-bell"></span> -->
             <!-- <div class="profile">
                 <span class="profile">
                     <img class="profile-icon" src="https://occ-0-4582-778.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABVC11njRAccYpkkyuBsUHtOOKYFGkwSR5W17rS9AcsA928D5_xgxoWHbUZESUThei8tFV3So6eTfjsvn0RRqN3kuxbq7KCI.png?r=59d" alt="">
@@ -68,7 +68,7 @@
     <div class="divider"></div>
     <div class="slider">
         <div class="sectionTitle">
-            <h2>Solo su Netflix</h2>
+            <h2>Film Popolari</h2>
             <ul class="pagination">
                 <li class="pagination active-pagination"></li>
                 <li class="pagination"></li>
@@ -80,18 +80,7 @@
                 <span class="fa-solid fa-chevron-left"></span>
              </div>
              <div class="sliderContainer" id="sliderContainer" data-type="movie">
-                
-                 <!-- <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div>
-                 
-                 <div class="card"><img class="movie-img" src="../img/Banner.webp" alt="prova"></div> -->
-
-                 <!-- all'hover di una card appare in sovrapposizione all'immagine titolo film/serie e altri dati -->
-     
+                <!-- film -->
              </div>
              <div class="arrow-right">
                  <span class="fa-solid fa-chevron-right"></span>
@@ -100,68 +89,23 @@
     </div>
     <div class="slider">
         <div class="sectionTitle">
-            <h2>Serie TV</h2>
+            <h2>Serie Popolari</h2>
             <ul class="pagination">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li class="pagination active-pagination"></li>
+                <li class="pagination"></li>
+                <li class="pagination"></li>
             </ul>
         </div>
-        <div class="sliderContainer" data-type="popular">
-            <div class="arrows">
-                <div class="arrow-left active">
-                    <span class="fa-solid fa-chevron-left"></span>
-                </div>
-                <div class="arrow-right active">
-                    <span class="fa-solid fa-chevron-right"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <div class="sectionTitle">
-            <h2>Film</h2>
-            <ul class="pagination">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="sliderContainer" data-type="anime">
-            <div class="arrows">
-                <div class="arrow-left active">
-                    <span class="fa-solid fa-chevron-left"></span>
-                </div>
-                <div class="arrow-right active">
-                    <span class="fa-solid fa-chevron-right"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="slider">
-        <div class="sectionTitle">
-            <h2>Nuovi e popolari</h2>
-            <ul class="pagination">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="sliderContainer" data-type="documentary">
-            <div class="arrows">
-                <div class="arrow-left active">
-                    <span class="fa-solid fa-chevron-left"></span>
-                </div>
-                <div class="arrow-right active">
-                    <span class="fa-solid fa-chevron-right"></span>
-                </div>
-            </div>
+        <div class="arrow-slider">
+            <div class="arrow-left">
+                <span class="fa-solid fa-chevron-left"></span>
+             </div>
+             <div class="sliderContainer" id="tvslider" data-type="movie">
+                <!-- serie -->
+             </div>
+             <div class="arrow-right">
+                 <span class="fa-solid fa-chevron-right"></span>
+             </div>
         </div>
     </div>
 

@@ -1,12 +1,12 @@
-import getMovie from "./fetchMovies.js";
+import getSeries from "./fetchSeries.js";
 
-const movie = async () => {
+const tv = async () => {
 
-  const data = await getMovie();
+  const data = await getSeries();
 
-    const movieContainer = document.getElementById("sliderContainer");
+    const tvContainer = document.getElementById("tvslider");
 
-    data.results.map((movie) => {
+    data.results.map((serie) => {
         const card = document.createElement("div");
         const title = document.createElement("h1");
         const year = document.createElement("p");
@@ -14,7 +14,7 @@ const movie = async () => {
         const details = document.createElement("div");
         const image = document.createElement("img");
 
-        movieContainer.appendChild(card);
+        tvContainer.appendChild(card);
         card.classList.add("card");
 
         card.appendChild(details);
@@ -22,26 +22,26 @@ const movie = async () => {
 
         details.appendChild(title);
         title.classList.add("film_title");
-        title.innerText = movie.original_title;
+        title.innerText = serie.name;
         
         details.appendChild(description);
         description.classList.add("film_description");
-        if (movie.overview.length > 150) {
-          let truncated = movie.overview.slice(0, 150);
-          movie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+        if (serie.overview.length > 150) {
+          let truncated = serie.overview.slice(0, 150);
+          serie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
         }      
-        description.innerText = movie.overview;
+        description.innerText = serie.overview;
         
 
         details.appendChild(year);
         year.classList.add("film_year");
-        year.innerText = movie.release_date.split("-")[0];
+        year.innerText = serie.first_air_date.split("-")[0];
 
         card.appendChild(image);
         image.classList.add("movie-img");
-        image.src = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
-    });    
+        image.src = `https://image.tmdb.org/t/p/original${serie.poster_path}`;
+    });
 
 };
 
-export default movie;
+export default tv;
