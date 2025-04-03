@@ -72,7 +72,13 @@ body::-webkit-scrollbar {
 }
 
 /* banner */
-.banner .title {
+.banner {
+    overflow: hidden;
+    height: 53em;
+}
+
+
+.banner .overviewContainer {
     width: 30em;
 }
 
@@ -85,17 +91,15 @@ body::-webkit-scrollbar {
     position: absolute;
 }
 
-.banner img {
-    width: 100%;
+.banner .titleDescription .title {
+    color: #fff;
 }
 
 .banner .bannerimg {
-    position: absolute;
-    z-index: -1;
-    background-size: cover;
-    background-position: 50%;
+    object-fit: cover;  
     opacity: 1;
-    height: 100vh;
+    height: auto;
+    width: 100%;
 }
 
 .filmdesc {
@@ -112,20 +116,6 @@ body::-webkit-scrollbar {
     margin: 1em 0;
 }
 
-.banner .buttons .playbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    background-color: #fff;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    margin-right: 0.7em;
-    cursor: pointer;
-    border: none;
-    border-radius: 0.2em;
-}
-
 .banner .buttons .playbutton .play {
     font-size: 1.2em;
 }
@@ -134,7 +124,7 @@ body::-webkit-scrollbar {
     font-size: 1.2em;
 }
 
-.banner .buttons .infobutton {
+.banner .buttons .infobutton/* , .banner .buttons .playbutton */ {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,7 +134,7 @@ body::-webkit-scrollbar {
     background-color: rgba(109, 109, 110, 0.7);
     cursor: pointer;
     font-size: 1.2em;
-    padding: 0em 1em;
+    padding: 0.5em 1em;
     border: none;
     border-radius: 0.2em;
 }
