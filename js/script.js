@@ -1,5 +1,5 @@
 import nav from './navbar.js';
-import movie from "./array.js";
+import movie from "./movieArray.js";
 import slider from './slider.js';
 import tv from './seriesArray.js';
 import showAlert from './alert.js';
