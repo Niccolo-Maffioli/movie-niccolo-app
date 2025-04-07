@@ -16,6 +16,55 @@
 
 </head>
 <body>
-    
+    <div class="age" id="tvage">
+        <!-- <span class="limit">13+</span> -->
+    </div>
+    <div class="banner" id="tvbanner">
+        <!-- <img src="../img/Banner.webp" alt="banner" class="bannerimg"> -->
+        <div class="vignette"></div>
+        <div class="hero-vignette vignette-layer"></div>
+        <div class="titleDescription">
+            <div class="overviewContainer" id="tvoverviewContainer">
+<!--                 <img src="../img/Film.webp" alt="film"> -->
+                <!-- <p class="filmdesc">Un misterioso robot porta una ragazza rimasta orfana alla ricerca del fratello in quest'avventura ricca di azione dai registi di "Avengers: Endgame."</p> -->
+            </div>
+            <div class="buttons">
+                <!-- <button id="showAlert" class="playbutton">
+                    <span class="fa-solid fa-play play"></span>
+                    <span class="text">Riproduci</span>
+                </button> -->
+                <button onclick="showAlert()" id="alertButton" class="infobutton">
+                    <span class="fa-solid fa-circle-info info"></span>
+                    <span class="text">Altre info</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="header" class="header">
+        <div class="nav">
+            <a href="index.html"><img src="../img/Logonetflix.png" alt="logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="serie.html">Serie TV</a></li>
+                <li><a href="film.html">Film</a></li>
+                <!-- <li><a href="consigli.html">Nuovi e popolari</a></li> -->
+                <!-- <li><a href="lista.html">La mia lista</a></li>
+                <li><a href="sfoglia.html">Sfoglia per lingua</a></li> -->
+            </ul>
+        </div>
+        <ul class="navicons">
+            <span class="search fa-solid fa-magnifying-glass" id="search-icon"></span>
+            <!-- <span><a href="bambini.html">Bambini</a></span> -->
+            <!-- <span class="notify fa-regular fa-bell"></span> -->
+            <!-- <div class="profile">
+                <span class="profile">
+                    <img class="profile-icon" src="https://occ-0-4582-778.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABVC11njRAccYpkkyuBsUHtOOKYFGkwSR5W17rS9AcsA928D5_xgxoWHbUZESUThei8tFV3So6eTfjsvn0RRqN3kuxbq7KCI.png?r=59d" alt="">
+                </span>
+                <span class="caret fa-solid fa-caret-down" role="presentation"></span>
+            </div> -->
+        </ul>
+    </div>
+    <!-- js -->
+    <script type="module" src="../js/script.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@ import movie from "./array.js";
 import slider from './slider.js';
 import tv from './seriesArray.js';
 import showAlert from './alert.js';
+import search from './search.js';
 
 tv();
 
@@ -11,6 +12,8 @@ movie();
 nav();
 
 slider();
+
+search();
 
 const alertButton = document.querySelector('#alertButton');
 

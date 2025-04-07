@@ -186,6 +186,7 @@ body::-webkit-scrollbar {
     padding: 0.2em;
     border-left: 0.2em solid #fff;
     background-color: rgba(51,51,51,.6);
+    box-sizing: content-box;
 }
 
 .age span {
@@ -375,4 +376,76 @@ ul.navicons {
 .arrow-right span, .arrow-left span {
     font-size: 1em;
     color: #fff;
+}
+
+/* film-page */
+/* .films-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10em;
+} */
+
+.film-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 3em;
+    height: 100%;
+}
+
+.film-container .film {
+    color: #000;
+    margin: 1em;
+    position: relative;
+}
+
+.film .overview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.film .overview .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.film .overview .description {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.film img {
+    width: 10em;
+    max-height: 100%;
+    border-radius: 0.2em;
+    object-fit: contain;
+    height: 100%;
+}
+
+/* search */
+#search-button {
+    cursor: pointer;
+}
+
+#search-input {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 0.5em;
+    border-radius: 3px;
+    caret-color: #fff;
+}
+
+.navicons .search.fa-xmark {
+    font-size: 1.3em;
+}
+
+#search-input.none {
+    display: none;
+}
+
+#search-input::placeholder {
+    color: #fff;
+    opacity: 50%;
 }

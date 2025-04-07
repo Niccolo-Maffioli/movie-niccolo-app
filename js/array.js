@@ -4,6 +4,11 @@ const movie = async () => {
 
   const data = await getMovie();
 
+
+  /* film-page */
+  //const filmContainer = document.getElementById("film-container");
+
+
     const movieContainer = document.getElementById("sliderContainer");
 
     const banner = document.getElementById("banner");
@@ -19,6 +24,7 @@ const movie = async () => {
 
     age.appendChild(agelimit);
 
+    //adult = false o true non è possibile quindi inserire un if per ogni età (es: 13+, 18+, 15+ ecc.)
     if (firstMovie.adult){
       agelimit.textContent = "18+";
     } else {
@@ -36,6 +42,10 @@ const movie = async () => {
 
     overviewContainer.appendChild(bannerdesc);
     bannerdesc.classList.add("filmdesc");
+    if (firstMovie.overview.length > 250) {
+      let truncated = firstMovie.overview.slice(0, 250);
+      firstMovie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+    }
     bannerdesc.textContent = firstMovie.overview;
 
     bannerimg.src = `https://image.tmdb.org/t/p/original${firstMovie.poster_path}`;
