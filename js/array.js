@@ -1,4 +1,6 @@
+import bannerFunction from "./banner.js";
 import getMovie from "./fetchMovies.js";
+import single from "./single.js";
 
 const movie = async () => {
 
@@ -11,44 +13,7 @@ const movie = async () => {
 
     const movieContainer = document.getElementById("sliderContainer");
 
-    const banner = document.getElementById("banner");
-    const overviewContainer = document.getElementById("overviewContainer");
-
-    const age = document.getElementById("age");
-
-    const firstMovie = data.results[0];
-    const agelimit = document.createElement("span");
-    const bannerimg = document.createElement("img");
-    const bannertitle = document.createElement("h1");
-    const bannerdesc = document.createElement("p");
-
-    age.appendChild(agelimit);
-
-    //adult = false o true non è possibile quindi inserire un if per ogni età (es: 13+, 18+, 15+ ecc.)
-    if (firstMovie.adult){
-      agelimit.textContent = "18+";
-    } else {
-      agelimit.textContent = "Per tutti";
-    }
-
-    banner.appendChild(bannerimg);
-    bannerimg.classList.add("bannerimg");
-
-    overviewContainer.classList.add("title");
-
-    overviewContainer.appendChild(bannertitle);
-    bannertitle.classList.add("title");
-    bannertitle.textContent = firstMovie.title;
-
-    overviewContainer.appendChild(bannerdesc);
-    bannerdesc.classList.add("filmdesc");
-    if (firstMovie.overview.length > 250) {
-      let truncated = firstMovie.overview.slice(0, 250);
-      firstMovie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
-    }
-    bannerdesc.textContent = firstMovie.overview;
-
-    bannerimg.src = `https://image.tmdb.org/t/p/original${firstMovie.poster_path}`;
+    bannerFunction(data);
 
 
     data.results.map((movie) => {
@@ -64,6 +29,8 @@ const movie = async () => {
 
         movieContainer.appendChild(card);
         card.classList.add("card");
+        card.setAttribute("data-id", movie.id);
+        card.setAttribute("data-full-overview", movie.overview);
 
         card.appendChild(details);
         details.classList.add("details");
@@ -74,11 +41,13 @@ const movie = async () => {
         
         details.appendChild(description);
         description.classList.add("film_description");
-        if (movie.overview.length > 150) {
-          let truncated = movie.overview.slice(0, 150);
-          movie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
-        }      
-        description.innerText = movie.overview;
+        
+        const fullOverview = movie.overview;
+        let shortOverview = fullOverview;
+        if (fullOverview.length > 150) {
+          shortOverview = fullOverview.slice(0, fullOverview.lastIndexOf(" ", 150)) + "...";
+        }     
+        description.innerText = shortOverview;
         
 
         details.appendChild(year);
@@ -109,7 +78,9 @@ const movie = async () => {
         ratingContainer.appendChild(star);
       }
 
-    });    
+    }); 
+    
+    single(data.results);
 
 };
 

@@ -7,5 +7,9 @@ Questo progetto è una simulazione fittizia di Netflix, con l'utilizzo DINAMICO 
 
 ### Funzionalità:
 - **Home Page**: Pagina principale con una lista di film popolari e serie TV popolari.
-- **Pgine Film/Serie TV**: Pagine con Film e Serie TV separati
+- **Pagine Film/Serie TV**: Pagine con Film e Serie TV separati
 - **Dettagli Film/Serie TV**: hover su ogni scheda
+- **Ricerca**: ...
+
+### Tecnologie:
+- HTML, CSS, JavaScript,
