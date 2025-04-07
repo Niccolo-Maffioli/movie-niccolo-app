@@ -3,7 +3,7 @@
 ## Collaboratori: --
 ## Data aggiornamento: 22/02/2022
 ### Descrizione:
-Descrizione: Questo progetto è una simulazione fittizia di Netflix, con l'utilizzo DINAMICO delle API di The Movie DataBase (TMDB).
+Questo progetto è una simulazione fittizia di Netflix, con l'utilizzo DINAMICO delle API di The Movie DataBase (TMDB).
 
 ### Funzionalità:
 - **Home Page**: Pagina principale con una lista di film popolari e serie TV popolari.
