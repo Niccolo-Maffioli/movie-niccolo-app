@@ -1,47 +1,62 @@
+// Importa la funzione che recupera le serie TV da TMDB
 import getSeries from "./fetchSeries.js";
 
+// Funzione asincrona principale che gestisce la visualizzazione delle serie
 const tv = async () => {
 
+  // Recupera i dati delle serie TV tramite la funzione fetch
   const data = await getSeries();
 
-    const tvContainer = document.getElementById("tvslider");
+  // Seleziona il contenitore HTML dove verranno inserite le card delle serie
+  const tvContainer = document.getElementById("tvslider");
 
-    data.results.map((serie) => {
-        const card = document.createElement("div");
-        const title = document.createElement("h1");
-        const year = document.createElement("p");
-        const description = document.createElement("p");
-        const details = document.createElement("div");
-        const image = document.createElement("img");
+  // Cicla su ogni serie contenuta nei risultati della risposta
+  data.results.map((serie) => {
+    // Crea tutti gli elementi HTML necessari per ogni card
+    const card = document.createElement("div");
+    const title = document.createElement("h1");
+    const year = document.createElement("p");
+    const description = document.createElement("p");
+    const details = document.createElement("div");
+    const image = document.createElement("img");
 
-        tvContainer.appendChild(card);
-        card.classList.add("card");
+    // Aggiunge la card al contenitore principale
+    tvContainer.appendChild(card);
+    card.classList.add("card"); // Aggiunge la classe "card" per lo stile
 
-        card.appendChild(details);
-        details.classList.add("details");
+    // Inserisce il blocco dettagli nella card
+    card.appendChild(details);
+    details.classList.add("details"); // Aggiunge la classe "details"
 
-        details.appendChild(title);
-        title.classList.add("film_title");
-        title.innerText = serie.name;
-        
-        details.appendChild(description);
-        description.classList.add("film_description");
-        if (serie.overview.length > 150) {
-          let truncated = serie.overview.slice(0, 150);
-          serie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
-        }      
-        description.innerText = serie.overview;
-        
+    // Aggiunge il titolo
+    details.appendChild(title);
+    title.classList.add("film_title");
+    title.innerText = serie.name; // Nome della serie
 
-        details.appendChild(year);
-        year.classList.add("film_year");
-        year.innerText = serie.first_air_date.split("-")[0];
+    // Aggiunge la descrizione (troncata se troppo lunga)
+    details.appendChild(description);
+    description.classList.add("film_description");
 
-        card.appendChild(image);
-        image.classList.add("movie-img");
-        image.src = `https://image.tmdb.org/t/p/original${serie.poster_path}`;
-    });
+    // Se la descrizione è più lunga di 150 caratteri, viene troncata fino all'ultima parola intera
+    if (serie.overview.length > 150) {
+      let truncated = serie.overview.slice(0, 150);
+      serie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
+    }      
+    description.innerText = serie.overview;
 
+    // Aggiunge l'anno di uscita, estratto dalla data
+    details.appendChild(year);
+    year.classList.add("film_year");
+
+    // Usa "first_air_date" invece di "release_date" per le serie TV
+    year.innerText = serie.first_air_date.split("-")[0];
+
+    // Aggiunge l'immagine del poster alla card
+    card.appendChild(image);
+    image.classList.add("movie-img");
+    image.src = `https://image.tmdb.org/t/p/original${serie.poster_path}`;
+  });
 };
 
+// Esporta la funzione per poterla usare in altri file
 export default tv;

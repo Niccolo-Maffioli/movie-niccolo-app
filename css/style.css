@@ -241,12 +241,30 @@ ul.navicons {
 
 /* slider */
 
-.slider {
+.slider, .film-container {
     height: 18em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 4.5em 0;
+    justify-content: space-around;
+}
+
+.slider {
+    margin: 5em 0;
+}
+
+.film-container {
+    margin-bottom: 80em;
+}
+
+.film-container .sliderContainer .card {
+    margin: 3em;
+}
+
+.film-container .sliderContainer {
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
 }
 
 .slider .arrow-slider {
@@ -264,11 +282,19 @@ ul.navicons {
 }
 
 .slider .sliderContainer {
+    overflow: hidden;
+}
+
+.film-container .sliderContainer .card {
+    width: 12em;
+}
+
+.sliderContainer {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: flex-start;
-    overflow: hidden;
+    margin: 4.5em 0;
 }
 
 .sliderContainer::-webkit-scrollbar {
@@ -285,7 +311,7 @@ ul.navicons {
 }
 
 
-.slider .card {
+.sliderContainer .card {
     width: 16em;
     height: 100%;
     margin: 0 0.3em;
@@ -386,57 +412,41 @@ ul.navicons {
     padding: 10em;
 } */
 
-.film-container {
+/* .film-container {
     display: flex;
     flex-direction: row;
     padding: 0 3em;
     height: 100%;
-}
-
-.film-container .film {
-    color: #000;
-    margin: 1em;
-    position: relative;
-}
-
-.film .overview {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 1em;
-    font-family: 'Roboto', sans-serif;
-}
-
-.film .overview .title {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.film .overview .description {
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.film img {
-    width: 10em;
-    max-height: 100%;
-    border-radius: 0.3em;
-    object-fit: contain;
-    height: 100%;
-}
+} */
 
 /* search */
+.input {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 3em;
+    /* position: absolute; */
+    z-index: 1000;
+    margin: 2em 4em;
+}
+
 #search-button {
     cursor: pointer;
 }
 
 #search-input {
-    background: transparent;
-    border: 1px solid #fff;
+    background: black;
+    /* border: 1px solid #fff; */
+    border: none;
     padding: 0.5em;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
     caret-color: #fff;
     color: #fff;
+    box-shadow: 5px 5px 10px #3f3f3f;
+    width: 30%;
+    margin: 5em 0;
+    height: 100%;
 }
 
 .navicons .search.fa-xmark {
