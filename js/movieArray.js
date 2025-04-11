@@ -95,7 +95,7 @@ const movie = async () => {
   }); 
   
   // Passa l'array dei film alla funzione `single` per gestire il click e mostrare il dettaglio
-  single(data.results);
+  single(movies.results);
 
 };
 

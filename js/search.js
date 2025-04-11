@@ -6,7 +6,7 @@ const search = async () => {
     const banner = document.getElementById("banner");
     const sliders = document.querySelectorAll(".slider");
     const container = document.getElementById("search-container");
-    const header = document.getElementById("header")
+    const header = document.getElementById("header");
 
     searchButton.addEventListener("click", () => {
         searchButton.classList.toggle("fa-magnifying-glass");
@@ -47,33 +47,29 @@ const search = async () => {
         image.src = `https://image.tmdb.org/t/p/original${tv.poster_path}`;
     }); */
 
-    searchInput.addEventListener("keyup", () => {
-        const filter = searchInput.value.toUpperCase();
-        const cards = container.querySelectorAll(".card");
+    searchInput.addEventListener("keyup", async () => {
+        //per rimuovere spazi a inizio e fine uso trim() metodo sul valore dell'input
+        const query = searchInput.value.trim();
+        if (!query) return;
     
-        data.forEach((movie, index) => {
-            const title = movie.title || movie.name || "";
-            const overview = movie.overview || "";
-            const fullText = (title + " " + overview).toUpperCase();
+        const search = await fetchFromTMDB("search", "multi", 1, `&query=${query}`);
     
-            if (fullText.includes(filter)) {
-                cards[index].style.display = "";
-            } else {
-                cards[index].style.display = "none";
-            }
+        container.innerHTML = "";
+    
+        search.results.forEach((item) => {
+            if (!item.poster_path) return;
+    
+            const card = document.createElement("div");
+            const image = document.createElement("img");
+    
+            card.classList.add("card");
+            image.src = `https://image.tmdb.org/t/p/original${item.poster_path}`;
+    
+            card.appendChild(image);
+            container.appendChild(card);
         });
     });
     
 };
 
 export default search;
-
-/* 
-array dei film [Peter Pan, Il Signore degli anelli, Harry Potter e la camera dei segreti, Minecraft, La principessa Mononoke]
-
-se l"utente clicca sul tasto cerca , allora: sparisce tutto (Banner compreso) i film e le serie rimangono ma non seprati in 2 slider.
-se l"utente scrive qualcosa nella barra di ricerca e clicca sul tasto cerca, allora: guarda descrizione (movie.overview e titolo di film e serie tv), se la descrizione contiene la parola cercata, allora mostra il film o la serie tv
-
-se l"utente scrive "m" nella barra di ricerca e clicca sul tasto cerca, allora: guarda descrizione (movie.overview e titolo di film e serie tv), mostra Minecraft, Principessa Mononoke ecc.
-
-*/
