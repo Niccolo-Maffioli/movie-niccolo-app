@@ -2,7 +2,7 @@
 import bannerFunction from "./banner.js";
 
 // Importa la funzione per ottenere i film da TMDB
-import getMovie from "./fetchMovies.js";
+import fetchFromTMDB from "./fetchMovies.js";
 
 // Importa la funzione che gestisce il click su una singola card
 import single from "./single.js";
@@ -11,16 +11,16 @@ import single from "./single.js";
 const movie = async () => {
 
   // Ottiene i dati dei film da TMDB
-  const data = await getMovie();
+  const movies = await fetchFromTMDB('movie', 'popular', 1);
 
   // Seleziona il contenitore dove verranno inserite le card dei film
   const movieContainer = document.getElementById("sliderContainer");
 
   // Usa i dati per aggiornare il banner (es. con un film in evidenza)
-  bannerFunction(data);
+  bannerFunction(movies);
 
   // Cicla ogni film restituito
-  data.results.map((movie) => {
+  movies.results.map((movie) => {
     // Crea gli elementi HTML
     const card = document.createElement("div");
     const title = document.createElement("h1");

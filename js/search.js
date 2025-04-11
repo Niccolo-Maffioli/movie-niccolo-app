@@ -1,5 +1,4 @@
-import getMovie from "./fetchMovies.js";
-import getSeries from "./fetchSeries.js";
+import fetchFromTMDB from "./fetchMovies.js";
 
 const search = async () => {
     const searchButton = document.getElementById("search-button");
@@ -21,10 +20,10 @@ const search = async () => {
         });
     });
 
-    const dataMovie = await getMovie();
-    const dataSeries = await getSeries();
+    const dataMovies = await fetchFromTMDB('movie', 'popular', 1);
+    const dataSeries = await fetchFromTMDB('tv', 'popular', 1);
 
-    const data = [...dataMovie.results, ...dataSeries.results];
+    const data = [...dataMovies.results, ...dataSeries.results];
 
     data.map((movie) => {
         const card = document.createElement("div");

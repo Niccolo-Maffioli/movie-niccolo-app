@@ -36,7 +36,7 @@ const bannerFunction = (array) => {
     }
     bannerdesc.textContent = firstMovie.overview;
 
-    bannerimg.src = `https://image.tmdb.org/t/p/original${firstMovie.poster_path}`;
+    bannerimg.src = `https://image.tmdb.org/t/p/original${firstMovie.backdrop_path}`;
 }
 
 export default bannerFunction;

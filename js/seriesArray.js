@@ -1,17 +1,17 @@
 // Importa la funzione che recupera le serie TV da TMDB
-import getSeries from "./fetchSeries.js";
+import fetchFromTMDB from "./fetchMovies.js";
 
 // Funzione asincrona principale che gestisce la visualizzazione delle serie
 const tv = async () => {
 
   // Recupera i dati delle serie TV tramite la funzione fetch
-  const data = await getSeries();
+  const series = await fetchFromTMDB('tv', 'popular', 1);
 
   // Seleziona il contenitore HTML dove verranno inserite le card delle serie
   const tvContainer = document.getElementById("tvslider");
 
   // Cicla su ogni serie contenuta nei risultati della risposta
-  data.results.map((serie) => {
+  series.results.map((serie) => {
     // Crea tutti gli elementi HTML necessari per ogni card
     const card = document.createElement("div");
     const title = document.createElement("h1");
