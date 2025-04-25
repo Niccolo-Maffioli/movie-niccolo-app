@@ -29,6 +29,10 @@ const search = async () => {
         const card = document.createElement("div");
         const image = document.createElement("img");
 
+        // Assegna attributi data-* per passare ID e overview completa
+        card.setAttribute("data-id", movie.id);
+        card.setAttribute("data-full-overview", movie.overview);
+
         container.appendChild(card);
         card.classList.add("card");
 

@@ -19,6 +19,12 @@ const tv = async () => {
     const description = document.createElement("p");
     const details = document.createElement("div");
     const image = document.createElement("img");
+    const ratingContainer = document.createElement("div");
+    const rating = document.createElement("p");
+
+    // Assegna attributi data-* per passare ID e overview completa
+    card.setAttribute("data-id", serie.id);
+    card.setAttribute("data-full-overview", serie.overview);
 
     // Aggiunge la card al contenitore principale
     tvContainer.appendChild(card);
@@ -38,11 +44,12 @@ const tv = async () => {
     description.classList.add("film_description");
 
     // Se la descrizione è più lunga di 150 caratteri, viene troncata fino all'ultima parola intera
+    let shortOverview = serie.overview;
     if (serie.overview.length > 150) {
-      let truncated = serie.overview.slice(0, 150);
-      serie.overview = truncated.slice(0, truncated.lastIndexOf(" ")) + "...";
-    }      
-    description.innerText = serie.overview;
+      shortOverview = serie.overview.slice(0, serie.overview.lastIndexOf(" ", 150)) + "...";
+    }
+    description.innerText = shortOverview;
+
 
     // Aggiunge l'anno di uscita, estratto dalla data
     details.appendChild(year);
@@ -55,6 +62,29 @@ const tv = async () => {
     card.appendChild(image);
     image.classList.add("movie-img");
     image.src = `https://image.tmdb.org/t/p/original${serie.poster_path}`;
+
+    // Sezione valutazione (stelle + voto)
+    details.appendChild(ratingContainer);
+    ratingContainer.classList.add("rating-container");
+
+    // Voto numerico
+    ratingContainer.appendChild(rating);
+    rating.classList.add("rating");
+    rating.innerText = Math.trunc(serie.vote_average / 2);
+
+    let ratingnum = Math.trunc(serie.vote_average / 2);
+
+    // Aggiunge stelle in base al voto
+    for (let i = 0; i < 5; i++) {
+      let star = document.createElement("i"); 
+      star.classList.add("fa-solid", "fa-star", "star");
+
+      if (i < ratingnum) {
+        star.style.color = "#F7B13E";
+      }
+
+      ratingContainer.appendChild(star);
+    }
   });
 };
 

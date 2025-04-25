@@ -453,7 +453,7 @@ ul.navicons {
     font-size: 1.3em;
 }
 
-#banner.none, #search-container.none, .slider.none, #search-input.none, #single-container.none, #search-container.none  {
+#banner.none, #search-container.none, .slider.none, #search-input.none, #single-container.none, #search-container.none, .none  {
     display: none;
 }
 
@@ -502,6 +502,17 @@ ul.navicons {
     margin-right: 3em;
 }
 
-.rating-container {
+/* .rating-container {
     display: flex; 
-}
+} */
+
+/* .card .link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+} */
+
+/* single */
+

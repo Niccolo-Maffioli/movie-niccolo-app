@@ -4,9 +4,6 @@ import bannerFunction from "./banner.js";
 // Importa la funzione per ottenere i film da TMDB
 import fetchFromTMDB from "./fetchMovies.js";
 
-// Importa la funzione che gestisce il click su una singola card
-import single from "./single.js";
-
 // Funzione principale asincrona per gestire i film
 const movie = async () => {
 
@@ -22,7 +19,8 @@ const movie = async () => {
   // Cicla ogni film restituito
   movies.results.map((movie) => {
     // Crea gli elementi HTML
-    const card = document.createElement("div");
+    const card = document.createElement("a");
+    //const link = document.createElement("a");
     const title = document.createElement("h1");
     const year = document.createElement("p");
     const description = document.createElement("p");
@@ -34,6 +32,15 @@ const movie = async () => {
     // Aggiunge la card al contenitore principale
     movieContainer.appendChild(card);
     card.classList.add("card");
+    card.href = "single.html";
+    card.addEventListener("click", () => {
+      const item = {
+        id: movie.id,
+        fullOverview: movie.overview
+      };
+      localStorage.setItem("singleItem", JSON.stringify(item));
+    });
+    
 
     // Assegna attributi data-* per passare ID e overview completa
     card.setAttribute("data-id", movie.id);
@@ -92,10 +99,11 @@ const movie = async () => {
       ratingContainer.appendChild(star);
     }
 
-  }); 
-  
-  // Passa l'array dei film alla funzione `single` per gestire il click e mostrare il dettaglio
-  single(movies.results);
+    /* card.appendChild(link);
+    link.href = `single.html`;
+    link.classList.add("link"); */
+
+  });
 
 };
 
