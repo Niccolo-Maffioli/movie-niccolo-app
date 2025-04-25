@@ -13,7 +13,7 @@ const tv = async () => {
   // Cicla su ogni serie contenuta nei risultati della risposta
   series.results.map((serie) => {
     // Crea tutti gli elementi HTML necessari per ogni card
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     const title = document.createElement("h1");
     const year = document.createElement("p");
     const description = document.createElement("p");
@@ -22,13 +22,23 @@ const tv = async () => {
     const ratingContainer = document.createElement("div");
     const rating = document.createElement("p");
 
-    // Assegna attributi data-* per passare ID e overview completa
-    card.setAttribute("data-id", serie.id);
-    card.setAttribute("data-full-overview", serie.overview);
-
     // Aggiunge la card al contenitore principale
     tvContainer.appendChild(card);
     card.classList.add("card"); // Aggiunge la classe "card" per lo stile
+    card.href = "single.html";
+    card.addEventListener("click", () => {
+      const item = {
+        id: serie.id,
+        fullOverview: serie.overview,
+        type: "tv"
+      };
+      localStorage.setItem("singleItem", JSON.stringify(item));
+    });
+    
+
+    // Assegna attributi data-* per passare ID e overview completa
+    card.setAttribute("data-id", serie.id);
+    card.setAttribute("data-full-overview", serie.overview);
 
     // Inserisce il blocco dettagli nella card
     card.appendChild(details);

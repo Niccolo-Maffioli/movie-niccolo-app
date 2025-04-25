@@ -36,10 +36,12 @@ const movie = async () => {
     card.addEventListener("click", () => {
       const item = {
         id: movie.id,
-        fullOverview: movie.overview
+        fullOverview: movie.overview,
+        type: "movie"
       };
       localStorage.setItem("singleItem", JSON.stringify(item));
     });
+    
     
 
     // Assegna attributi data-* per passare ID e overview completa

@@ -5,7 +5,7 @@ const singleContainer = document.getElementById("single-container");
 const itemData = JSON.parse(localStorage.getItem("singleItem"));
 
 const fetchSingleDetails = async () => {
-  const item = await fetchFromTMDB('movie', itemData.id);
+  const item = await fetchFromTMDB(itemData.type, itemData.id);
   const title = item.title || item.name;
   const image = item.poster_path;
   const description = itemData.fullOverview;
