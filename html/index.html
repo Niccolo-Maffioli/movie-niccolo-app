@@ -55,7 +55,7 @@
             </ul>
         </div>
         <ul class="navicons">
-            <span class="search fa-solid fa-magnifying-glass" id="search-button"></span>
+            <a href="search.html"><span class="search fa-solid fa-magnifying-glass" id="search-button"></span></a>
             
             <!-- <span><a href="bambini.html">Bambini</a></span> -->
             <!-- <span class="notify fa-regular fa-bell"></span> -->
@@ -121,6 +121,21 @@
     </div>
     <!-- script.js -->
     <script type="module" src="../js/script.js"></script>
+
+    <!-- allert button -->
+    <script>
+        const showAlert = () => {
+            console.log("showAlert è stato chiamato!");
+            alert('Hello World');
+        }
+        
+        const alertButton = document.querySelector('#alertButton');
+
+        alertButton.addEventListener("click", () => {
+            showAlert();
+        })
+    </script>
+
 
 </body>
 </html>

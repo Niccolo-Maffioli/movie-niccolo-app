@@ -470,7 +470,8 @@ ul.navicons {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    margin-left: 4em;    
+    margin-left: 4em;  
+    margin-top: 8em;  
 }
 
 #search-container .card {

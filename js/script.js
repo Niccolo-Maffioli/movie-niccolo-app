@@ -2,7 +2,6 @@ import nav from './navbar.js';
 import movie from "./movieArray.js";
 import slider from './slider.js';
 import tv from './seriesArray.js';
-import showAlert from './alert.js';
 import search from './search.js';
 
 tv();
@@ -14,12 +13,6 @@ nav();
 slider();
 
 search();
-
-const alertButton = document.querySelector('#alertButton');
-
-alertButton.addEventListener("click", () => {
-    showAlert();
-})
 
 /* alertButton === null || alertButton === void 0 ? void 0 : alertButton.addEventListener('click', function () {
     alert('Play');

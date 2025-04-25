@@ -7,10 +7,8 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico">
 
-    <title>film - Netflix</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Search - Netflix</title>
 
 
     <link rel="stylesheet" href="../css/style.css">
@@ -29,7 +27,8 @@
             </ul>
         </div>
         <ul class="navicons">
-            <a href="search.html"><span class="search fa-solid fa-magnifying-glass" id="search-button"></span></a>
+            <input type="text" class="search-input" id="search-input" placeholder="Cerca film">
+            <!-- <a href="search.html"><span class="search fa-solid fa-magnifying-glass" id="search-button"></span></a> -->
             <!-- <span class="search fa-solid fa-magnifying-glass"></span> -->
             <!-- <span><a href="bambini.html">Bambini</a></span> -->
             <!-- <span class="notify fa-regular fa-bell"></span> -->
@@ -41,8 +40,10 @@
             </div> -->
         </ul>
     </div>
-    <div id="single-container" class="single-container"></div>
-    <script type="module" src="../js/single.js"></script>
-    <!-- <script type="module" src="../js/script.js"></script> -->
+
+    <div class="search-container" id="search-container"></div>
+
+    <script type="module" src="../js/script.js"></script>
+    
 </body>
 </html>
