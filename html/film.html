@@ -72,5 +72,13 @@
     </div>
     <!-- js -->
     <script type="module" src="../js/script.js"></script>
+    <script type="module">
+        import fetchFromTMDB from "../js/fetchMovies.js";
+        import bannerFunction from "../js/banner.js";
+
+        const movies = await fetchFromTMDB('movie', 'popular', 1);
+
+        bannerFunction(movies);
+    </script>
 </body>
 </html>

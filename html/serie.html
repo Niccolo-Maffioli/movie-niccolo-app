@@ -16,15 +16,15 @@
 
 </head>
 <body>
-    <div class="age" id="tvage">
+    <div class="age" id="age">
         <!-- <span class="limit">13+</span> -->
     </div>
-    <div class="banner" id="tvbanner">
+    <div class="banner" id="banner" data-type="serie">
         <!-- <img src="../img/Banner.webp" alt="banner" class="bannerimg"> -->
         <div class="vignette"></div>
         <div class="hero-vignette vignette-layer"></div>
         <div class="titleDescription">
-            <div class="overviewContainer" id="tvoverviewContainer">
+            <div class="overviewContainer" id="overviewContainer">
 <!--                 <img src="../img/Film.webp" alt="film"> -->
                 <!-- <p class="filmdesc">Un misterioso robot porta una ragazza rimasta orfana alla ricerca del fratello in quest'avventura ricca di azione dai registi di "Avengers: Endgame."</p> -->
             </div>
@@ -54,6 +54,7 @@
         </div>
         <ul class="navicons">
             <a href="search.html"><span class="search fa-solid fa-magnifying-glass" id="search-button"></span></a>
+            <!-- <span class="search fa-solid fa-magnifying-glass"></span> -->
             <!-- <span><a href="bambini.html">Bambini</a></span> -->
             <!-- <span class="notify fa-regular fa-bell"></span> -->
             <!-- <div class="profile">
@@ -64,7 +65,20 @@
             </div> -->
         </ul>
     </div>
+    <div class="film-container">
+        <div class="sliderContainer" id="tvslider" data-type="serie">
+            
+        </div>
+    </div>
     <!-- js -->
     <script type="module" src="../js/script.js"></script>
+    <script type="module">
+        import fetchFromTMDB from "../js/fetchMovies.js";
+        import bannerFunction from "../js/banner.js";
+
+        const series = await fetchFromTMDB('tv', 'popular', 1);
+
+        bannerFunction(series);
+    </script>
 </body>
 </html>

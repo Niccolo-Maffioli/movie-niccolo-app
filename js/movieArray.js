@@ -1,6 +1,3 @@
-// Importa la funzione che gestisce il banner principale
-import bannerFunction from "./banner.js";
-
 // Importa la funzione per ottenere i film da TMDB
 import fetchFromTMDB from "./fetchMovies.js";
 
@@ -12,9 +9,6 @@ const movie = async () => {
 
   // Seleziona il contenitore dove verranno inserite le card dei film
   const movieContainer = document.getElementById("sliderContainer");
-
-  // Usa i dati per aggiornare il banner (es. con un film in evidenza)
-  bannerFunction(movies);
 
   // Cicla ogni film restituito
   movies.results.map((movie) => {
