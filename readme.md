@@ -32,6 +32,8 @@ Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le
   
 - **Gestione dinamica della pagina singola:** La logica di nascondere e mostrare contenuti in base alla navigazione è stata un po' complessa da implementare. Alla fine, la soluzione migliore è stata passare a una gestione basata su più pagine HTML.
 
+- **Gestione delle Branch**: Il mio tentativo iniziale era quello di creare una branch separata per ogni singola funzione (cosa che ho fatto parzialmente), per gestire al meglio lo sviluppo e mantenere ogni modifica ben separata. Tuttavia, non essendo abituato al flusso di lavoro con GitHub, ho finito per sviluppare o modificare alcune funzioni direttamente nella branch master o in branch dove quelle modifiche non erano strettamente pertinenti. Questo ha reso più difficile il tracciamento delle modifiche e la gestione del codice nel lungo periodo.
+
 ### Punti di miglioramento:
 - **Slider:** Lo slider che mostra i film funziona in base alla larghezza della pagina, ma questo approccio potrebbe essere limitante, specialmente su dispositivi con risoluzioni diverse. Un miglioramento potrebbe essere l'uso di un sistema di gestione dello slider più dinamico e responsivo.
   
