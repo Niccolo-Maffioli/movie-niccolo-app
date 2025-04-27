@@ -1,7 +1,7 @@
 // nav.js
-var nav = function () {
-    document.addEventListener("scroll", function () {
-        var navbar = document.getElementById("header");
+const nav = () => {
+    document.addEventListener("scroll", () => {
+        const navbar = document.getElementById("header");
         if (navbar) {
             if (window.scrollY > 50) {
                 navbar.classList.add("headerscroll");

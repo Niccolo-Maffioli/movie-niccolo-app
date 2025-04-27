@@ -71,10 +71,10 @@
         </div>
     </div>
     <!-- js -->
-    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../dist/script.js"></script>
     <script type="module">
-        import fetchFromTMDB from "../js/fetchMovies.js";
-        import bannerFunction from "../js/banner.js";
+        import fetchFromTMDB from "../dist/fetchMovies.js";
+        import bannerFunction from "../dist/banner.js";
 
         const series = await fetchFromTMDB('tv', 'popular', 1);
 

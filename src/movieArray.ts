@@ -1,20 +1,33 @@
 // Importa la funzione per ottenere i film da TMDB
 import fetchFromTMDB from "./fetchMovies.js";
 
-// Funzione principale asincrona per gestire i film
-const movie = async () => {
+// Definisci il tipo per un singolo film (puoi poi estrarlo da fetchMovies.ts se già lo definisci lì)
+interface Movie {
+  id: number;
+  original_title: string;
+  overview: string;
+  release_date: string;
+  poster_path: string;
+  vote_average: number;
+}
 
+// Funzione principale asincrona per gestire i film
+const movie = async (): Promise<void> => {
   // Ottiene i dati dei film da TMDB
   const movies = await fetchFromTMDB('movie', 'popular', 1);
 
   // Seleziona il contenitore dove verranno inserite le card dei film
-  const movieContainer = document.getElementById("sliderContainer");
+  const movieContainer = document.getElementById("sliderContainer") as HTMLElement | null;
+
+  if (!movieContainer) {
+    console.error("Elemento 'sliderContainer' non trovato.");
+    return;
+  }
 
   // Cicla ogni film restituito
-  movies.results.map((movie) => {
+  movies.results.forEach((movie: Movie) => {
     // Crea gli elementi HTML
     const card = document.createElement("a");
-    //const link = document.createElement("a");
     const title = document.createElement("h1");
     const year = document.createElement("p");
     const description = document.createElement("p");
@@ -35,11 +48,9 @@ const movie = async () => {
       };
       localStorage.setItem("singleItem", JSON.stringify(item));
     });
-    
-    
 
     // Assegna attributi data-* per passare ID e overview completa
-    card.setAttribute("data-id", movie.id);
+    card.setAttribute("data-id", movie.id.toString());
     card.setAttribute("data-full-overview", movie.overview);
 
     // Struttura interna della card
@@ -55,14 +66,14 @@ const movie = async () => {
     details.appendChild(description);
     description.classList.add("film_description");
 
-    const fullOverview = movie.overview;
-    let shortOverview = fullOverview;
+    const fullOverview: string = movie.overview;
+    let shortOverview: string = fullOverview;
     if (fullOverview.length > 150) {
       shortOverview = fullOverview.slice(0, fullOverview.lastIndexOf(" ", 150)) + "...";
-    }     
+    }
     description.innerText = shortOverview;
 
-    // Anno di uscita, estratto dalla release_date
+    // Anno di uscita
     details.appendChild(year);
     year.classList.add("film_year");
     year.innerText = movie.release_date.split("-")[0];
@@ -79,13 +90,12 @@ const movie = async () => {
     // Voto numerico
     ratingContainer.appendChild(rating);
     rating.classList.add("rating");
-    rating.innerText = Math.trunc(movie.vote_average / 2);
-
-    let ratingnum = Math.trunc(movie.vote_average / 2);
+    const ratingnum = Math.trunc(movie.vote_average / 2);
+    rating.innerText = ratingnum.toString();
 
     // Aggiunge stelle in base al voto
     for (let i = 0; i < 5; i++) {
-      let star = document.createElement("i"); 
+      const star = document.createElement("i");
       star.classList.add("fa-solid", "fa-star", "star");
 
       if (i < ratingnum) {
@@ -94,13 +104,7 @@ const movie = async () => {
 
       ratingContainer.appendChild(star);
     }
-
-    /* card.appendChild(link);
-    link.href = `single.html`;
-    link.classList.add("link"); */
-
   });
-
 };
 
 // Esporta la funzione movie per poterla usare altrove
