@@ -59,6 +59,11 @@ body::-webkit-scrollbar {
 .header .nav ul li{
     list-style: none;
     text-decoration: none;
+    padding: 0 2em;
+}
+
+.header .nav a span {
+    display: none;
 }
 
 .header a {
@@ -71,12 +76,15 @@ body::-webkit-scrollbar {
     opacity: 80%;
 }
 
+.mobile-search {
+    display: none;
+}
+
 /* banner */
 .banner {
     overflow: hidden;
     height: 53em;
 }
-
 
 .banner .overviewContainer {
     width: 30em;
@@ -86,8 +94,8 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    left: 4%;
-    bottom: 25%;
+    left: 3em;
+    bottom: 20em;
     position: absolute;
 }
 
@@ -154,7 +162,8 @@ body::-webkit-scrollbar {
     left: 0;
     opacity: 1;
     position: absolute;
-    right: 26.09%;
+    right: 26.09em;
+    width: 100%;
     top: 0;
     transition: opacity .5s;
 }
@@ -503,9 +512,67 @@ ul.navicons {
     margin-right: 3em;
 }
 
-/* .rating-container {
-    display: flex; 
-} */
+
+/* working progress media query */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 1.3em;
+    }
+    .input {
+        display: none;
+    }
+    .slider {
+        display: none;
+    }
+    .header .logo-link {
+        display: none;
+    }
+    .header {
+        bottom: 0;
+        top: auto;
+        background-color: #191919;
+        background-image: none;
+        padding-left: 0;
+    }
+    .header .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    .header .nav li {
+        padding: 0 1.5em;
+    }
+    .header a {
+        margin: 0;
+    }
+    .header .nav a p {
+        display: none;
+    }
+    .header .nav a span {
+        display: block;
+    }
+    .mobile-search {
+        display: block;
+    }
+    .navicons {
+        display: none !important;
+    }
+    .banner {
+        width: 100%;
+    }
+    .overviewContainer {
+        display: none;
+    }
+    .banner .vignette {
+        display: none;
+    }
+}
+
+.rating-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
 
 /* .card .link {
     display: block;

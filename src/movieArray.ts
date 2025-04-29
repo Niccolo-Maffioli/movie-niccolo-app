@@ -93,6 +93,8 @@ const movie = async (): Promise<void> => {
     const ratingnum = Math.trunc(movie.vote_average / 2);
     rating.innerText = ratingnum.toString();
 
+    const starContainer = document.createElement("div");
+    ratingContainer.appendChild(starContainer);
     // Aggiunge stelle in base al voto
     for (let i = 0; i < 5; i++) {
       const star = document.createElement("i");
@@ -102,7 +104,7 @@ const movie = async (): Promise<void> => {
         star.style.color = "#F7B13E";
       }
 
-      ratingContainer.appendChild(star);
+      starContainer.appendChild(star);
     }
   });
 };
