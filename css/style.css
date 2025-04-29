@@ -559,12 +559,42 @@ ul.navicons {
     }
     .banner {
         width: 100%;
+        height: 10em;
     }
-    .overviewContainer {
+    .banner .overviewContainer {
+        width: 100%;
+    }
+    .overviewContainer .filmdesc {
         display: none;
+    }
+    .overviewContainer .title{
+        font-size: 1em;
     }
     .banner .vignette {
         display: none;
+    }
+    .banner .herovignette {
+        display: none;
+    }
+    .age {
+        display: none;
+    }
+    .banner .titleDescription {
+        left: 2em;
+        bottom: auto;
+        top: 3em;
+    }
+    .titleDescription .buttons {
+        width: 100%;
+    }
+    .titleDescription .buttons .text {
+        font-size: 0.6em;
+    }
+    .info {
+        font-size: 0.6em;
+    }
+    .banner .buttons .infobutton {
+        padding: 0.2em 0.5em;
     }
 }
 
