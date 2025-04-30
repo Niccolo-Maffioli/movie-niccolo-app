@@ -10,7 +10,7 @@ Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le
 ### Funzionalità:
 - **Home Page:** Visualizzazione di una lista di film e serie TV popolari.
 - **Pagine Film/Serie TV:** Pagine separate per film e serie TV.
-- **Dettagli Film/Serie TV:** Visualizzazione dei dettagli (titolo, immagine, descrizione) al passaggio del mouse su ogni card.
+- **Dettagli Film/Serie TV:** Visualizzazione dei dettagli (titolo, immagine, descrizione) al passaggio del mouse su ogni card e al click per una pagina dedicata.
 - **Ricerca:** Funzionalità di ricerca tramite l'API TMDB.
 
 ### Tecnologie:
