@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // Importa la funzione per ottenere i film da TMDB
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 // Funzione principale asincrona per gestire i film
 const movie = () => __awaiter(void 0, void 0, void 0, function* () {
     // Ottiene i dati dei film da TMDB

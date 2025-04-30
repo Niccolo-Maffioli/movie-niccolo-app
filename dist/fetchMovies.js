@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const fetchFromTMDB = (type_1, category_1, ...args_1) => __awaiter(void 0, [type_1, category_1, ...args_1], void 0, function* (type, category, page = 1, queryString = "") {
+const fetchFromTMDB = (type, category, page = 1, queryString = "") => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (typeof type !== "string") {
             throw new Error("Il parametro 'type' deve essere una stringa.");

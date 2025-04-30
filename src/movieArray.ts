@@ -1,5 +1,5 @@
 // Importa la funzione per ottenere i film da TMDB
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 
 // Definisci il tipo per un singolo film (puoi poi estrarlo da fetchMovies.ts se già lo definisci lì)
 interface Movie {

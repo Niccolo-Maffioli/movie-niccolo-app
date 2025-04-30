@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // Importa la funzione che recupera le serie TV da TMDB
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 // Funzione asincrona principale che gestisce la visualizzazione delle serie
 const tv = () => __awaiter(void 0, void 0, void 0, function* () {
     // Recupera i dati delle serie TV tramite la funzione fetch

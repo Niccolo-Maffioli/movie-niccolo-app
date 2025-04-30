@@ -3,43 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film - Netflix</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico">
 
+    <title>film - Netflix</title>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- style.css -->
-    <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="age" id="age">
-        <!-- <span class="limit">13+</span> -->
-    </div>
-    <div class="banner" id="banner">
-        <!-- <img src="../img/Banner.webp" alt="banner" class="bannerimg"> -->
-        <div class="vignette"></div>
-        <div class="hero-vignette vignette-layer"></div>
-        <div class="titleDescription">
-            <div class="overviewContainer" id="overviewContainer">
-<!--                 <img src="../img/Film.webp" alt="film"> -->
-                <!-- <p class="filmdesc">Un misterioso robot porta una ragazza rimasta orfana alla ricerca del fratello in quest'avventura ricca di azione dai registi di "Avengers: Endgame."</p> -->
-            </div>
-            <div class="buttons">
-                <!-- <button id="showAlert" class="playbutton">
-                    <span class="fa-solid fa-play play"></span>
-                    <span class="text">Riproduci</span>
-                </button> -->
-                <button onclick="showAlert()" id="alertButton" class="infobutton">
-                    <span class="fa-solid fa-circle-info info"></span>
-                    <span class="text">Altre info</span>
-                </button>
-            </div>
-        </div>
-    </div>
     <div id="header" class="header">
         <div class="nav">
             <a href="index.html" class="logo-link"><img src="../img/Logonetflix.png" alt="logo" class="logo-img"></a>
@@ -55,7 +31,7 @@
         </div>
         <ul class="navicons">
             <a href="search.html"><span class="search fa-solid fa-magnifying-glass" id="search-button"></span></a>
-            
+            <!-- <span class="search fa-solid fa-magnifying-glass"></span> -->
             <!-- <span><a href="bambini.html">Bambini</a></span> -->
             <!-- <span class="notify fa-regular fa-bell"></span> -->
             <!-- <div class="profile">
@@ -66,20 +42,8 @@
             </div> -->
         </ul>
     </div>
-    <div class="film-container">
-        <div class="sliderContainer" id="sliderContainer" data-type="movie">
-            
-        </div>
-    </div>
-    <!-- js -->
-    <script type="module" src="../dist/script.js"></script>
-    <script type="module">
-        import fetchFromTMDB from "../dist/fetchMovies.js";
-        import bannerFunction from "../dist/banner.js";
-
-        const movies = await fetchFromTMDB('movie', 'popular', 1);
-
-        bannerFunction(movies);
-    </script>
+    <div id="single-container" class="single-container"></div>
+    <script type="module" src="./dist/single.js"></script>
+    <!-- <script type="module" src="../js/script.js"></script> -->
 </body>
 </html>

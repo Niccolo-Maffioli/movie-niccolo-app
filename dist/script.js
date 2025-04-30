@@ -1,8 +1,8 @@
-import nav from './navbar';
-import movie from "./movieArray";
-import slider from './slider';
-import tv from './seriesArray';
-import search from './search';
+import nav from './navbar.js';
+import movie from "./movieArray.js";
+import slider from './slider.js';
+import tv from './seriesArray.js';
+import search from './search.js';
 tv();
 movie();
 nav();

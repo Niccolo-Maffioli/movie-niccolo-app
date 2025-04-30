@@ -1,4 +1,4 @@
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 
 interface MovieOrTV {
   id: number;

@@ -1,5 +1,5 @@
 // Importa la funzione che recupera le serie TV da TMDB
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 
 // Definizione dell'interfaccia per una serie TV (per sicurezza)
 interface TVSerie {

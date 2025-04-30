@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import fetchFromTMDB from "./fetchMovies";
+import fetchFromTMDB from "./fetchMovies.js";
 const singleContainer = document.getElementById("single-container");
 const itemDataRaw = localStorage.getItem("singleItem");
 const itemData = itemDataRaw ? JSON.parse(itemDataRaw) : null;
