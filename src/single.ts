@@ -1,4 +1,4 @@
-import fetchFromTMDB from "./fetchMovies.js";
+import fetchFromTMDB from "./fetchMovies";
 
 // Definizione delle interfacce
 interface SingleItem {

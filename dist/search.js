@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import fetchFromTMDB from "./fetchMovies.js";
+import fetchFromTMDB from "./fetchMovies";
 const search = () => __awaiter(void 0, void 0, void 0, function* () {
     const searchInput = document.getElementById("search-input");
     const container = document.getElementById("search-container");

@@ -1,4 +1,4 @@
-import { spesa } from "./food.js";
+import { spesa } from "./food";
 
 spesa.map((item) => {
     console.log(item);

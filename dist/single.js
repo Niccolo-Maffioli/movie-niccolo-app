@@ -7,14 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import fetchFromTMDB from "./fetchMovies.js";
+import fetchFromTMDB from "./fetchMovies";
 const singleContainer = document.getElementById("single-container");
 const itemDataRaw = localStorage.getItem("singleItem");
 const itemData = itemDataRaw ? JSON.parse(itemDataRaw) : null;
 const fetchSingleDetails = () => __awaiter(void 0, void 0, void 0, function* () {
     if (itemData && singleContainer) {
         try {
-            // Recuperiamo i dettagli del film/serie
+            // Recupero i dettagli del film/serie
             const response = yield fetchFromTMDB(itemData.type, itemData.id);
             // Cast della risposta come unknown
             const item = response;
@@ -23,11 +23,13 @@ const fetchSingleDetails = () => __awaiter(void 0, void 0, void 0, function* () 
                 const title = item.title || item.name || "Senza titolo";
                 const image = item.poster_path;
                 const description = itemData.fullOverview;
-                // Creiamo l'immagine
+                //const ratingContainer = document.createElement("div");
+                //const rating = document.createElement("p");
+                // Creazione dell'immagine
                 const img = document.createElement("img");
                 img.src = `https://image.tmdb.org/t/p/original${image}`;
                 img.classList.add("single-image");
-                // Creiamo il container per i dettagli
+                // Creazione il container per i dettagli
                 const detailsContainer = document.createElement("div");
                 detailsContainer.classList.add("details-container");
                 const titolo = document.createElement("h1");
@@ -36,6 +38,22 @@ const fetchSingleDetails = () => __awaiter(void 0, void 0, void 0, function* () 
                 desc.innerText = description;
                 detailsContainer.append(titolo, desc);
                 singleContainer.append(img, detailsContainer);
+                /* const ratingnum = Math.trunc(.vote_average / 2);
+                rating.innerText = ratingnum.toString();
+                const starContainer = document.createElement("div");
+                ratingContainer.appendChild(starContainer);
+        
+                
+                for (let i = 0; i < 5; i++) {
+                  const star = document.createElement("i");
+                  star.classList.add("fa-solid", "fa-star", "star");
+        
+                  if (i < ratingnum) {
+                    star.style.color = "#F7B13E";
+                  }
+        
+                  starContainer.appendChild(star);
+                } */
             }
             else {
                 console.error("La risposta non contiene le proprietà necessarie.");
