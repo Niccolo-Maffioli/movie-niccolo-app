@@ -42,7 +42,7 @@ Ritengo che strumenti come Vite, TypeScript e molte altre dipendenze siano molto
 ### Difficoltà incontrate:
 - **Gestione di fetch e asincronia:** Inizialmente complicata, poi migliorata col tempo grazie a `try/catch` e `async/await`.
 - **Navigazione dinamica:** La SPA gestita con classi CSS era poco scalabile, sostituita da una gestione multi-pagina.
-- **Git e branching:** Difficoltà iniziali nel mantenere un flusso ordinato con Git, a volte sviluppando sulla branch `main` invece che su feature branch dedicati.
+- **Git e branching:** Difficoltà iniziali nel mantenere un flusso ordinato con Git, a volte sviluppando sulla branch `master` invece che su feature branch dedicati.
 
 ### Punti di miglioramento:
 - **Slider:** Attualmente basato sulla larghezza della finestra. Potrebbe essere migliorato per diventare più dinamico e responsivo.
