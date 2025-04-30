@@ -17,6 +17,7 @@ Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le
 - **Frontend:** HTML, CSS, TypeScript (compilato in JavaScript).
 - **API Esterne:** TMDB (The Movie Database).
 - **Strumenti di supporto:** ChatGPT.
+- **Deploy:** Vercel.
 
 ### Struttura del progetto:
 - `/src`: contiene i file TypeScript (`.ts`)
