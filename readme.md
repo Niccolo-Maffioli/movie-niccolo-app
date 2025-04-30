@@ -37,7 +37,7 @@ Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le
 ### Considerazioni su Vite:
 Durante il progetto è stato inizialmente provato Vite per migliorare il processo di sviluppo. Tuttavia, a causa di problemi nella configurazione (routing, path relativi, gestione degli asset), si è deciso di non utilizzarlo.
 
-Ritengo che strumenti come Vite, TypeScript e molte altre dipendenze siano molto utili se integrati fin dall'inizio del progetto. Nel mio caso, ho deciso di introdurre Vite e TypeScript durante una fase già più che avanzata dello sviluppo. Tuttavia, questo approccio ha inevitabilmente reso il mio lavoro più complesso, soprattutto in termini di configurazione, gestione dei path e deploy. Per questo motivo, dopo aver tentato di adattare il progetto, ho preferito tornare a una struttura più semplice e gestibile manualmente eliminando vite, in futuro proverò a reintegrarlo.
+Ritengo che strumenti come Vite, TypeScript e molte altre dipendenze siano molto utili se integrati fin dall'inizio del progetto. Nel mio caso, ho deciso di introdurre Vite e TypeScript durante una fase già più che avanzata dello sviluppo. Tuttavia, questo approccio ha inevitabilmente reso il mio lavoro più complesso, soprattutto in termini di configurazione, gestione dei path e deploy. Per questo motivo, dopo aver tentato di adattare il progetto, ho preferito tornare a una struttura più semplice e gestibile manualmente eliminando vite, in futuro con la giusta consapevolezza dello strumento e della tecnologia che sto utilizzando lo reintegrerò.
 
 ### Difficoltà incontrate:
 - **Gestione di fetch e asincronia:** Inizialmente complicata, poi migliorata col tempo grazie a `try/catch` e `async/await`.
