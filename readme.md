@@ -2,39 +2,50 @@
 
 ## Autore: Niccolò Maffioli  
 **Collaboratori:** Nessuno  
-**Data ultimo aggiornamento:** 27/04/2025  
+**Data ultimo aggiornamento:** 30/04/2025  
 
 ### Descrizione:
-Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le API di **The Movie Database (TMDB)** per caricare contenuti film e serie TV.
+Questo progetto è una simulazione di **Netflix**, che utilizza dinamicamente le API di **The Movie Database (TMDB)** per caricare contenuti di film e serie TV.
 
 ### Funzionalità:
 - **Home Page:** Visualizzazione di una lista di film e serie TV popolari.
-- **Pagine Film/Serie TV:** Pagine separate per i film e le serie TV.
-- **Dettagli Film/Serie TV:** Visualizzazione dei dettagli (come titolo, immagine e descrizione) al passaggio del mouse su ogni scheda.
-- **Ricerca:** Ricerca di film e serie TV tramite l'API TMDB.
+- **Pagine Film/Serie TV:** Pagine separate per film e serie TV.
+- **Dettagli Film/Serie TV:** Visualizzazione dei dettagli (titolo, immagine, descrizione) al passaggio del mouse su ogni card.
+- **Ricerca:** Funzionalità di ricerca tramite l'API TMDB.
 
 ### Tecnologie:
-- **Frontend:** HTML, CSS, TypeScript (JavaScript).
+- **Frontend:** HTML, CSS, TypeScript (compilato in JavaScript).
 - **API Esterne:** TMDB (The Movie Database).
-- **Altri strumenti:** ChatGPT per il supporto nello sviluppo.
+- **Strumenti di supporto:** ChatGPT.
 
-### Processo/Considerazioni:
-1. **Fase iniziale:** Ho creato una pagina HTML statica che rispecchiasse l'aspetto di Netflix, cercando di ricreare un design simile anche nel layout e nel comportamento.
-   
-2. **Integrazione con TMDB:** Inizialmente, ho utilizzato JavaScript per connettermi all'API di TMDB, rendendo dinamico il sito senza caricare troppe immagini statiche in locale. Le immagini venivano caricate dinamicamente tramite le API e visualizzate direttamente nelle card.
+### Struttura del progetto:
+- `/src`: contiene i file TypeScript (`.ts`)
+- `/dist`: contiene i file JavaScript compilati (`.js`)
+- `/css`: contiene i file di stile CSS
+- `/img`: immagini e risorse statiche
+- File HTML principali nella root (`index.html`, `film.html`, `serie.html`, ecc.)
 
-3. **Gestione della pagina singola:** Durante la fase di sviluppo, ho esplorato l'idea di usare una singola pagina (`index.html`) con l'uso di classi CSS per nascondere o mostrare le sezioni. Tuttavia, ho constatato che questo approccio risultava troppo dispendioso in termini di performance. Ho quindi deciso di utilizzare più pagine HTML, popolate dinamicamente con il contenuto tramite JavaScript.
+### Processo di sviluppo:
 
-4. **Passaggio a TypeScript:** Dopo aver completato la parte statica e dinamica del sito, ho deciso di convertire il progetto in TypeScript per sfruttare i vantaggi di un linguaggio tipizzato. Ho riorganizzato il codice spostando i file nella cartella `src` e utilizzando il comando di compilazione per ottenere i file JavaScript nella cartella `dist`.
+1. **Design iniziale:** Realizzazione di una pagina HTML statica ispirata a Netflix, con layout e stili simili.
+2. **Integrazione API TMDB:** Utilizzo di `fetch` per caricare dinamicamente contenuti da TMDB, evitando immagini statiche locali.
+3. **Gestione multi-pagina:** Dopo una prima fase in cui si è tentato un approccio a singola pagina (`SPA`), si è optato per una struttura multi-pagina più semplice e performante.
+4. **Passaggio a TypeScript:** Il progetto è stato poi convertito in TypeScript, con compilazione dei file nella cartella `dist`.
+5. **Deploy su Vercel:** Alla fine, il progetto è stato pubblicato manualmente su **Vercel**, senza utilizzare strumenti come Vite per evitare configurazioni complesse non necessarie in questo caso.
+
+### Considerazioni su Vite:
+Durante il progetto è stato inizialmente provato Vite per migliorare il processo di sviluppo. Tuttavia, a causa di problemi nella configurazione (routing, path relativi, gestione degli asset), si è deciso di non utilizzarlo.
+
+Ritengo che strumenti come Vite, TypeScript e molte altre dipendenze siano molto utili se integrati fin dall'inizio del progetto. Nel nostro caso, l'introduzione di Vite è avvenuta in una fase già avanzata dello sviluppo, per ragioni didattiche e organizzative comprensibili. Tuttavia, questo approccio ha inevitabilmente reso il mio lavoro più complesso, soprattutto in termini di configurazione, gestione dei path e deploy. Per questo motivo, dopo aver tentato di adattare il progetto, ho preferito tornare a una struttura più semplice e gestibile manualmente.
 
 ### Difficoltà incontrate:
-- **Gestione di fetch, try-catch, e API:** Ho avuto difficoltà nell'implementazione di alcune funzionalità, specialmente nell'uso di `fetch`, `try-catch`, e nella gestione delle risposte asincrone. Questo è stato uno degli aspetti che ho dovuto comprendere meglio durante lo sviluppo.
-  
-- **Gestione dinamica della pagina singola:** La logica di nascondere e mostrare contenuti in base alla navigazione è stata un po' complessa da implementare. Alla fine, la soluzione migliore è stata passare a una gestione basata su più pagine HTML.
-
-- **Gestione delle Branch**: Il mio tentativo iniziale era quello di creare una branch separata per ogni singola funzione (cosa che ho fatto parzialmente), per gestire al meglio lo sviluppo e mantenere ogni modifica ben separata. Tuttavia, non essendo abituato al flusso di lavoro con GitHub, ho finito per sviluppare o modificare alcune funzioni direttamente nella branch master o in branch dove quelle modifiche non erano strettamente pertinenti. Questo ha reso più difficile il tracciamento delle modifiche e la gestione del codice nel lungo periodo.
+- **Gestione di fetch e asincronia:** Inizialmente complicata, poi migliorata col tempo grazie a `try/catch` e `async/await`.
+- **Navigazione dinamica:** La SPA gestita con classi CSS era poco scalabile, sostituita da una gestione multi-pagina.
+- **Git e branching:** Difficoltà iniziali nel mantenere un flusso ordinato con Git, a volte sviluppando sulla branch `main` invece che su feature branch dedicati.
 
 ### Punti di miglioramento:
-- **Slider:** Lo slider che mostra i film funziona in base alla larghezza della pagina, ma questo approccio potrebbe essere limitante, specialmente su dispositivi con risoluzioni diverse. Un miglioramento potrebbe essere l'uso di un sistema di gestione dello slider più dinamico e responsivo.
-  
-- **Responsive Design:** Il sito non è completamente responsive. Una delle principali aree da migliorare riguarda l'adattamento del layout a dispositivi mobili o schermi di diverse dimensioni. L'implementazione di media queries sarebbe utile per migliorare l'esperienza utente su dispositivi più piccoli.
+- **Slider:** Attualmente basato sulla larghezza della finestra. Potrebbe essere migliorato per diventare più dinamico e responsivo.
+- **Responsive Design:** Il sito non è completamente mobile-friendly. Implementare media queries sarebbe il passo successivo ideale.
+
+### Deploy online:
+👉 Il progetto è visibile su Vercel: [movie-niccolo-app](https://movie-niccolo-app-1yzy.vercel.app/)
